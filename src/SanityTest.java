@@ -40,12 +40,6 @@ public class SanityTest {
 		driver.findElement(By.name("Log Out")).click();
 		driver.findElement(By.name("Yes")).click();
 		driver.findElement(By.name("Close")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASearchBar[1]")).click();
-		driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASearchBar[1]")).sendKeys("San Jose");
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASearchBar[1]")).click();
-		driver.findElement(By.name("Commercial")).click();
 	}
 	
 	@Test
@@ -59,5 +53,14 @@ public class SanityTest {
 		driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAButton[7]")).click();		
 		driver.findElement(By.name("OK")).click();
 		driver.findElement(By.name("Close")).click();
+	}
+	
+	@Test
+	public void sampleSearch() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASearchBar[1]")).click();
+		driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASearchBar[1]")).sendKeys("San Jose");
+		Thread.sleep(1000);
+		driver.findElement(By.name("Commercial")).click();
 	}
 }
